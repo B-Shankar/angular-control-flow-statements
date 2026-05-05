@@ -1,0 +1,50 @@
+<h1>Control Flow statements</h1>
+
+<div>
+  @if (isLogin()) {
+    <span>Welcome, user!</span>
+  } @else {
+    <span>Welcome, guest!</span>
+  }
+
+  <button (click)="toggelLogin()">
+    @if (isLogin()) {
+      <span>Logout</span>
+    } @else {
+      <span>Login</span>
+    }
+  </button>
+</div>
+
+<hr />
+
+<h1>Toggle</h1>
+@if (show()) {
+  <button (click)="show.set(false)">Show</button>
+} @else {
+  <button (click)="show.set(true)">Hide</button>
+}
+
+<hr />
+
+<h1>Check Status</h1>
+<select (change)="handleStatusChange($event)" id="" name="" style="margin-bottom: 10px;">
+  <option value="notStarted">Not Started</option>
+  <option value="inProgress">In Progress</option>
+  <option value="success">Success</option>
+  <option value="error">Error</option>
+</select>
+
+<br />
+
+<div style="margin-left: 6px;">
+  @if (status() == "notStarted") {
+    <span style="color: gray;">Not Started</span>
+  } @else if (status() == "inProgress") {
+    <span style="color: orange;">In Progress</span>
+  } @else if (status() == "success") {
+    <span style="color: yellowgreen;">Success</span>
+  } @else if (status() == "error") {
+    <span style="color: red;">Error</span>
+  }
+</div>

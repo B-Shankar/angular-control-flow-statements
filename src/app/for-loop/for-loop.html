@@ -1,0 +1,28 @@
+<h1>For loop | Control Statement</h1>
+
+<div>
+  <ul>
+  @for (user of users(); track user) {
+    <li>{{user}}</li>
+  }
+  </ul>
+</div>
+
+<br />
+<hr />
+<br />
+
+<div>
+  @for (user of userDetails(); track user.id) {
+    <ul>
+      <li [style.backgroundColor]="$odd ? '#ccc' : '#fff'">
+        <strong>{{$index + 1}} {{user.name}}</strong> - [<strong>{{user.party}}</strong>] 
+          @if ($first) {<span style="color: green;">(Leading)</span>}
+          @if (!$first) {<span style="color: red;">(Trailing)</span>}
+      </li>
+      @if ($count == $index + 1) {
+        <span style="margin-top: 8px;"><b>Total: {{ $count }}</b></span>
+      }
+    </ul>
+  }
+</div>
