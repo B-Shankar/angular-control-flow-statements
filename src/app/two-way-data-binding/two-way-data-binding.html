@@ -1,0 +1,58 @@
+<h1>two-way-data-binding</h1>
+
+<div>
+  <span>{{name()}}</span>
+  <br />
+  <input type="text" [value]="name()" (input)="name.set($event.target.value)"/>
+</div>
+
+<div>
+  <span>{{age()}}</span>
+  <span>-{{age1()}}-</span>
+  <span>{{age2()}}</span>
+  <br />
+  <!-- Below are same -->
+  <input type="number" [value]="age()" [(ngModel)]="age" />
+  <input type="number" [(ngModel)]="age1" />
+  <input type="number" [ngModel]="age2" (ngModelChange)="age2 = $event" />
+</div>
+
+<hr />
+<br />
+<hr />
+
+
+<div>
+  <span>{{userData().name}}</span>
+  <input 
+    type="text" 
+    [value]="userData().name" 
+    (input)="handleInput('name', $event.target.value)"
+    style="margin-left: 8px;"
+    title="Name"
+
+  />
+  
+  <br />
+
+  <span>{{userData().email}}</span>
+  <input 
+    type="text" 
+    [value]="userData().email" 
+    (input)="handleInput('email', $event.target.value)"
+    style="margin-left: 8px;"
+    title="Email"
+    label="Email"
+  />
+
+  <br />
+
+  <span>{{userData().age}}</span>
+  <input 
+    type="text" 
+    [value]="userData().age" 
+    (input)="handleInput('age', $event.target.value)"
+    style="margin-left: 8px;"
+    title="Age"
+  />
+</div>
