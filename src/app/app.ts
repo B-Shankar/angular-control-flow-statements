@@ -5,10 +5,11 @@ import { ForLoop } from './for-loop/for-loop';
 import { SwitchStatement } from './switch-statement/switch-statement';
 import { TwoWayDataBinding } from './two-way-data-binding/two-way-data-binding';
 import { SignalGetterSetter } from './signal-getter-setter/signal-getter-setter';
+import { NgDirectives } from "./ng-directives/ng-directives";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, IfStatements, ForLoop, SwitchStatement, TwoWayDataBinding, SignalGetterSetter],
+  imports: [RouterOutlet, IfStatements, ForLoop, SwitchStatement, TwoWayDataBinding, SignalGetterSetter, NgDirectives],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
